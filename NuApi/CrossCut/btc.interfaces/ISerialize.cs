@@ -8,7 +8,7 @@ namespace btc.interfaces
 {
     public interface ISerialize
     {
-        string SerializeJSON<TEntity>(string request);
+        string SerializeJSON<TEntity>(TEntity o);
 
         object DeserializeJSON<TEntity>(string json);
     }
