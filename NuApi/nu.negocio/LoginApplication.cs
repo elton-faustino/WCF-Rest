@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using nu.requestWeak;
+using Newtonsoft.Json;
 
 namespace nu.negocio
 {
@@ -15,9 +16,13 @@ namespace nu.negocio
 
 	    }
 
-        public string Login(string request)            
+        public string Login()            
         {
-            return SerializeJSON<User>(request);
+            var res = JsonConvert.SerializeObject(new RootClass() { uSER = new User() { Conta = "010203", Senha = "MyPassword", Teste = new List<string>() { "1", "2", "outra" } } }) ;
+
+            res = res.Replace("\"", "");
+
+            return res;
         }
     }
 }
