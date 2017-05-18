@@ -16,14 +16,14 @@ namespace nu.implementacao
         {
             try
             {
-                //return new LoginApplication().Login(request);
+                return new LoginApplication().Login();
             }
             catch (Exception ex)
             {
                 //return warning message
             }
 
-            return string.Empty;
+            return "Elton";
         }
     }
 }
