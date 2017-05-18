@@ -11,11 +11,9 @@ namespace btc.implementacao
     public abstract class Serialize : ISerialize
     {
 
-        public string SerializeJSON<TEntity>(string request)
+        public string SerializeJSON<TEntity>(TEntity o)
         {
-            var oRootObject = Activator.CreateInstance<TEntity>();
-
-            var json = new JavaScriptSerializer().Serialize(oRootObject);
+            var json = new JavaScriptSerializer().Serialize(o);
 
             return json;
         }
